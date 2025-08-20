@@ -20,7 +20,7 @@ class UserResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'អ្នកប្រើប្រាស់';
+    protected static ?string $recordTitleAttribute = 'name';
     protected static ?string $navigationLabel = 'អ្នកប្រើប្រាស់';
     protected static ?string $modelLabel = 'អ្នកប្រើប្រាស់';
     protected static ?string $pluralModelLabel = 'អ្នកប្រើប្រាស់';

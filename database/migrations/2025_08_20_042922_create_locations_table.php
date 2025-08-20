@@ -13,14 +13,17 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('type')->nullable();
+            $table->string('name')->nullable();
             $table->string('name_kh')->nullable();
-            $table->string('code')->unique();
-            $table->foreignId('parent_id')->nullable()->constrained('locations')->onDelete('cascade');
+            $table->string('code')->nullable();
+            $table->integer('parent_id')->nullable();
+            $table->index('parent_id');
+            $table->index('code');
             $table->timestamps();
             $table->softDeletes();
-            
-            $table->index(['parent_id']);
+
+            $table->index(['parent_id', 'code']);
         });
     }
 
