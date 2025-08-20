@@ -14,14 +14,14 @@ class LocationSeeder extends Seeder
     public function run(): void
     {
         // Create provinces
-        $phnomPenh = Location::create([
+        $phnomPenh = Location::createOrFirst([
             'name' => 'Phnom Penh',
             'name_kh' => 'ភ្នំពេញ',
             'code' => '01',
             'parent_id' => null,
         ]);
 
-        $kandal = Location::create([
+        $kandal = Location::createOrFirst([
             'name' => 'Kandal',
             'name_kh' => 'កណ្ដាល',
             'code' => '07',
@@ -29,7 +29,7 @@ class LocationSeeder extends Seeder
         ]);
 
         // Create districts in Kandal
-        $saang = Location::create([
+        $saang = Location::createOrFirst([
             'name' => 'Saang',
             'name_kh' => 'សាង',
             'code' => '0707',
@@ -37,7 +37,7 @@ class LocationSeeder extends Seeder
         ]);
 
         // Create communes in Saang
-        $kampongLuong = Location::create([
+        $kampongLuong = Location::createOrFirst([
             'name' => 'Kampong Luong',
             'name_kh' => 'កំពង់លួង',
             'code' => '070702',
@@ -45,21 +45,21 @@ class LocationSeeder extends Seeder
         ]);
 
         // Create villages in Kampong Luong
-        Location::create([
+        Location::createOrFirst([
             'name' => 'Prey Khpos',
             'name_kh' => 'ព្រៃខ្ពស់',
             'code' => '07070201',
             'parent_id' => $kampongLuong->id,
         ]);
 
-        Location::create([
+        Location::createOrFirst([
             'name' => 'Kampong Luong',
             'name_kh' => 'កំពង់លួង',
             'code' => '07070202',
             'parent_id' => $kampongLuong->id,
         ]);
 
-        Location::create([
+        Location::createOrFirst([
             'name' => 'Prey Thmei',
             'name_kh' => 'ព្រៃថ្មី',
             'code' => '07070203',
@@ -67,21 +67,21 @@ class LocationSeeder extends Seeder
         ]);
 
         // Add more sample locations
-        $takhmao = Location::create([
+        $takhmao = Location::createOrFirst([
             'name' => 'Takhmao',
             'name_kh' => 'តាខ្មៅ',
             'code' => '0701',
             'parent_id' => $kandal->id,
         ]);
 
-        $takhmaoCommune = Location::create([
+        $takhmaoCommune = Location::createOrFirst([
             'name' => 'Takhmao',
             'name_kh' => 'តាខ្មៅ',
             'code' => '070101',
             'parent_id' => $takhmao->id,
         ]);
 
-        Location::create([
+        Location::createOrFirst([
             'name' => 'Takhmao Town',
             'name_kh' => 'ក្រុងតាខ្មៅ',
             'code' => '07010101',

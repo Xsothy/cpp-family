@@ -27,13 +27,13 @@ class DatabaseSeeder extends Seeder
         $admin->assignRole('admin');
 
         // Create test users for other roles
-        $headOfCommune = User::factory()->create([
+        $headOfCommune = User::createOrFirst([
             'name' => 'Head of Commune',
             'email' => 'head.commune@example.com',
         ]);
         $headOfCommune->assignRole('head_of_commune');
 
-        $subHeadOfCommune = User::factory()->create([
+        $subHeadOfCommune = User::createOrFirst([
             'name' => 'Sub Head of Commune',
             'email' => 'sub.commune@example.com',
         ]);
